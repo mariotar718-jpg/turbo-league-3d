@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body {
+    background-color: #060b16;
+  }
+
+  html,
+  body,
+  canvas,
+  #ui-layer {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    position: fixed;
+    inset: 0;
+    color: #f8fafc;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  #ui-layer {
+    background-color: transparent;
+  }
+}
+
+.font-display {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.font-mono-num {
+  font-family: "JetBrains Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.allow-scroll {
+  touch-action: pan-y !important;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+.rl-skew {
+  transform: skewX(-10deg);
+}
+
+.rl-unskew {
+  transform: skewX(10deg);
+}
+
+.rl-bevel {
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+.rl-bevel-lg {
+  clip-path: polygon(18px 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
+}
+
+@keyframes bmRainbowBorder {
+  0% { border-color: #e040fb; box-shadow: 0 0 16px rgba(224, 64, 251, 0.55); }
+  33% { border-color: #00e5ff; box-shadow: 0 0 16px rgba(0, 229, 255, 0.55); }
+  66% { border-color: #ff6600; box-shadow: 0 0 16px rgba(255, 102, 0, 0.55); }
+  100% { border-color: #e040fb; box-shadow: 0 0 16px rgba(224, 64, 251, 0.55); }
+}
+
+.bm-rainbow-card {
+  animation: bmRainbowBorder 2.6s linear infinite;
+}
+
+@keyframes speedLinesPulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.85; }
+}
+
+.supersonic-vignette {
+  background: radial-gradient(circle at center, transparent 52%, rgba(168, 85, 247, 0.22) 82%, rgba(0, 200, 255, 0.42) 100%);
+  animation: speedLinesPulse 0.35s ease-in-out infinite;
+}

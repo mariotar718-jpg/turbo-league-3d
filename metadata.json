@@ -1,0 +1,6 @@
+{
+  "name": "Turbo League 3D",
+  "description": "Réplica 3D de Rocket League optimizada a 60 FPS para iPad y PC con controles táctiles pro, física aérea, garaje, cajas y replay instantáneo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
